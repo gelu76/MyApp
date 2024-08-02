@@ -1,0 +1,58 @@
+#:kivy 2.1.0
+
+<LoginScreen>:
+    FloatLayout:
+        Image:
+            source: '../poza1.jpg'
+            fit_mode: "fill"
+            size_hint: (1, 1)
+
+        GridLayout:
+            cols: 2
+            rows: 3
+            padding: 10
+            spacing: 10
+            size_hint: (None, None)
+            width: root.width * 0.7
+            height: root.height * 0.7
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+
+            Label:
+                text: "Username"
+                size_hint_y: None
+                height: 40
+                halign: 'center'
+                valign: 'middle'
+
+            TextInput:
+                id: username
+                size_hint_y: None
+                height: 40
+                width: 200
+                font_size: self.height * 0.5
+
+            Label:
+                text: "Password"
+                size_hint_y: None
+                height: 40
+                halign: 'center'
+                valign: 'middle'
+
+            TextInput:
+                id: password
+                password: True
+                size_hint_y: None
+                height: 40
+                width: 200
+                font_size: self.height * 0.5
+
+            Label:
+                size_hint_y: None
+                height: 40
+
+            Button:
+                text: "Login"
+                size_hint_y: None
+                height: 40
+                width: 100
+                on_press: root.verify_credentials()

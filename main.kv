@@ -1,0 +1,36 @@
+<MainScreen>:
+    MDNavigationLayout:
+        ScreenManager:
+            id: screen_manager
+            MainScreenContent:
+                name: "main"
+            UsersScreen:
+                name: "users"
+        MDNavigationDrawer:
+            id: nav_drawer
+            ContentNavigationDrawer:
+                screen_manager: screen_manager
+                nav_drawer: nav_drawer
+
+<MainScreenContent>:
+    AnchorLayout:
+        anchor_x: 'center'
+        anchor_y: 'top'
+        MDToolbar:
+            title: "Main Screen - PPP"
+            md_bg_color: app.theme_cls.primary_color
+            left_action_items: [["menu", lambda x: app.get_running_app().toggle_nav_drawer()]]
+            pos_hint: {"top": 1}
+
+    AnchorLayout:
+        anchor_x: 'center'
+        anchor_y: 'center'
+        Label:
+            text: "Welcome to the Main Screen!"
+            font_size: 30
+            bold: True
+            size_hint_y: None
+            height: self.texture_size[1]
+            halign: 'center'
+            valign: 'middle'
+            color: "000000"  # Setează culoarea textului la negru

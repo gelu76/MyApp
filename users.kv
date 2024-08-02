@@ -1,0 +1,12 @@
+<UsersScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        MDToolbar:
+            title: "User Page - APP"
+            md_bg_color: app.theme_cls.primary_color
+            left_action_items: [["menu", lambda x: app.get_running_app().toggle_nav_drawer()]]
+            pos_hint: {"top": 1}
+        AnchorLayout:
+            anchor_x: 'center'
+            anchor_y: 'center'
+            size_hint: 1, 0.9

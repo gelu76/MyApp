@@ -1,0 +1,29 @@
+#:kivy 2.1.0
+
+<MenuContent>:
+    orientation: 'vertical'
+    padding: dp(10)
+    spacing: dp(10)
+
+    ScrollView:
+        do_scroll_x: False
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint_y: None
+            height: self.minimum_height
+            padding: dp(10)
+            spacing: dp(10)
+
+            OneLineListItem:
+                text: "Home"
+                on_release: app.root.children[0].current = 'main'
+
+            OneLineListItem:
+                text: "Users"
+                on_release: root.parent.parent.current = 'users'
+
+            OneLineListItem:
+                text: "Settings"
+
+            OneLineListItem:
+                text: "About"
